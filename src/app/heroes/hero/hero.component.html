@@ -1,0 +1,21 @@
+<h1>{{name}}</h1>
+
+<dl>
+  <dt>Nombre:</dt>
+  <dd>{{name}} </dd>
+
+  <dt>Edad:</dt>
+  <dd>{{age}} </dd>
+
+  <dt>Método:</dt>
+  <dd>{{getHeroDescription()}}</dd>
+
+  <dt>Capitalizado:</dt>
+  <dd>{{capitalizedName}} </dd>
+</dl>
+
+<!-- con la directiva ngIf elimina o crea un html acepta booleanos si pones true no ocurre nada pero si poner false se eliminara -->
+<!-- si el nombre es diferente a 'Spiderman' entonces el boton estará ahí pero si es igual entonces se eliminara -->
+<button class="btn btn-primary me-2" (click)="changeHero()" *ngIf="name !== 'Spiderman' ">Cambiar nombre</button>
+<button class="btn btn-primary" (click)="changeAge()" *ngIf="age !== 25">Cambiar edad</button>
+<button class="btn btn-primary ms-2" (click)="reset()">reset</button>

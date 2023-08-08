@@ -1,0 +1,28 @@
+<h3>listado de heroes</h3>
+
+<ul class="mt-2 list-group">
+  <!-- los datos del array de heroNames se pasaran a la variable name y lo interpolamos en el html -->
+  <li *ngFor="let name of heroNames" class="list-group-item">{{name}}</li>
+</ul>
+
+<!-- que muestre este parrafo si el número de elementos del array de string de heroNames es mayor a cero y si es false pues no lo mostrará  -->
+<button class="btn btn-outline-danger" (click)="removeLastHero()" *ngIf="heroNames.length > 0">Borrar último heroe</button>
+
+
+<!-- si hay un heroe borrado entonces que muestre el h4 y sino entonces va a mostrar el h4 del ng-template-->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+  <!-- el valor del heroe eliminado lo interpolamos aqui -->
+  <h4>heroe borrado <small class="text-danger">{{deletedHero}}</small></h4>
+</div>
+
+<!-- como puedes ver estamos haciendo el ngIf dos veces y hay una forma más rapida de hacerlo. Con ng-template -->
+<!-- <div *ngIf="!deletedHero">
+  <h4>no ha borrado nada</h4>
+</div> -->
+
+<!-- ng-template es un elemento de angular (es como un div que no existe) -->
+<!-- para llamar la referencia de else ponemos #nombreElse -->
+<ng-template #nothingWasDeleted>
+  <h4>no ha borrado nada</h4>
+</ng-template>
+
