@@ -1,0 +1,10 @@
+<h4>Agregar personaje</h4>
+    <form (ngSubmit)="emitCharacter()">
+      <!-- [(ngModel)] atributo y evento al mismo tiempo. Esto sirve para hacer que el formulario no recargue la página cuando se envían los formularios  -->
+      <input type="text" [(ngModel)]="character.name" name="name" class="form-control" placeholder="Nombre">
+      <input type="number" [(ngModel)]="character.power" name="power" class="form-control" placeholder="Poder">
+
+      <button type="submit" class="btn btn-primary">
+        Agregar
+      </button>
+    </form>

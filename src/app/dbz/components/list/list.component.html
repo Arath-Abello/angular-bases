@@ -1,0 +1,29 @@
+<h4>Listado</h4>
+<ul class="list-group">
+  <!-- el indice lo extraemos y lo guardamos en la variable i para interpolarlo obviamente comenzará en cero entonces le sumamos uno en cada iteracion (0 + 1 = 1) -->
+  <li *ngFor="
+  let personaje of characterList;
+  let i = index;
+  let esPrimero = first;
+  let esUltimo = last;
+  let esPar = even;
+  let esImpar = odd
+  "
+
+  class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{
+    'list-group-item-dark': esUltimo,
+    'list-group-item-primary': esPar
+  }">
+<!-- ngClass: Puedes usarla para agregar o quitar clases basadas en ciertas condiciones o variables en tu componente. por ejemplo se agrega la clase list-group-item-dark si la variable esUltimo es verdadera   -->
+    <span class="text-primary">{{i + 1}}.</span>
+
+   Nombre: {{personaje.name}} - Poder: {{personaje.power}}
+
+   <!-- <span>Es el primero: {{esPrimero}} </span>
+   <span>Es el último: {{esUltimo}} </span>
+   <span>Es par: {{esPar}} </span>-->
+   <span>Es impar: {{esImpar}} </span>
+
+   <button class="btn btn-danger" (click)="onDeleteCharacter(character.id)">X</button>
+  </li>
+</ul>
