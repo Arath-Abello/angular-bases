@@ -8,12 +8,12 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class ListComponent {
 
-  // Input es para recibir datos del archivo padre(main-page.component.ts) para este archivo hijo
+  // Input es para recibir datos del archivo padre(main-page.component.ts) para este archivo hijo(lisr.component.ts)
   @Input()
   public characterList: Character[] = [];
 
   @Output()
-  //* recuerda que los eventos y sus genericos<aceptan solo tipo de datos>
+  //* recuerda que los genericos<aceptan solo tipo de datos>
   public onDelete: EventEmitter<string> = new EventEmitter();
 
   onDeleteCharacter(id?: string):void {

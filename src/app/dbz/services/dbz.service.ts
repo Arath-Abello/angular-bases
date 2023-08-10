@@ -45,6 +45,10 @@ export class DbzService {
   // }
 
   deleteById(id: string){
+    /**
+     * filtrarán los elementos del array  this.character  para mantener solo aquellos cuyo  id
+     * no sea igual al valor de la variable  id .
+     */
     this.character = this.character.filter(newCharacter => newCharacter.id !== id)
   }
 
