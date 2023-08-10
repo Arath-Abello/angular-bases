@@ -29,7 +29,7 @@ export class DbzService {
     power: 7500
   }];
 
-  recibirCharacter(character: Character):void{
+  addCharacter(character: Character):void{
 
     // agrega el id y los tres puntos es un spread que tome todas las propiedades de la interfaz Character guardada en la variable character
     const newCharacter: Character = {

@@ -4,14 +4,14 @@
 <div class="row">
   <div class="col">
     <!--la variable characterList de li.component.ts recibe datos del padre en este caso la variable character de main-page.component.ts -->
-    <app-dbz-list [characterList]="dbzService.character" (onDelete)="dbzService.deleteById($event)"></app-dbz-list>
+    <app-dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></app-dbz-list>
 
   </div>
 
   <div class="col">
     <!-- como veras el Output de la funcion del hijo al padre onNewCharacter es un evento entonces se pone entreparentesis -->
     <!-- sabemos que el hijo esta emitiendo al padre, pero como lo recibimos? llamando a la funcion del padre main-page.component.ts y poniendo el parametro con $event -->
-    <app-dbz-add-character (onNewCharacter)="dbzService.recibirCharacter($event)" ></app-dbz-add-character>
+    <app-dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></app-dbz-add-character>
 
   </div>
 </div>
